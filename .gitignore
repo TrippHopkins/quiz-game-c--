@@ -1,2 +1,6 @@
 *.exe
 .vscode
+main
+test.cpp
+a.out
+test

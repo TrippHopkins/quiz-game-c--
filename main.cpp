@@ -1,22 +1,52 @@
 #include <iostream>
 #include <ctime>
 
-void giveQuestion();
+int getRandQuestion();
 
 int main(){
 
-    int question;
+    /*
+    case 1: std::cout << "What is the center of a cell called?\n";
+            return 1;
+            break;
+        case 2: std::cout << "What is the capital of Israel?\n";
+            return 2;
+            break;
+        case 3: std::cout << "How many feet are in a mile?\n";
+            return 3;
+            break;
+        case 4: std::cout << "Who was the 8th President of the United States of America?\n";
+            return 4;
+            break;
+        case 5: std::cout << "What is the closes Galaxy to the Milky Way\n";
+        */
+
     std::string guess;
-    std::string answer;
-    std::string YN;
+    int index;
 
-    std::cout << "************ QUIZ GAME ************";
+    std::string Ques[] = {"What is the center of a cell called?\n", "What is the capital of Israel?\n", "How many feet are in a mile?\n", "Who was the 8th President of the United States of America?\n", "What is the closes Galaxy to the Milky Way\n"};
+    std::string Ans[] = {"Nucleus", "Jerusalem", "5280", "Martin Van Buren", "Andromeda"};
 
-    giveQuestion();
+    std::cout << "********************* QUIZ GAME ***********************\n";
+    std::cout << "PLEASE CAPITALISE THE FIRST LETTER AND SPELL CORRECTELY\n";
+    //CHALLENGE IDEA: make them not have to input caps
+
+    int Index = getRandQuestion();
+
+    std::cout << Ques[Index];
+    std::getline(std::cin, guess);
 
 
+    if(guess == Ans[Index]){
+        std::cout << "CORRECT!\n";
+    }
+    else{
+        std::cout << "Sorry, that is Incorrect\n";
+    }
 
-    std::cout << "************************************";
+    std::cout << "CORRECT ANSWER: " << Ans[Index] << '\n';
+
+    std::cout << "********************************************************";
 
 
 
@@ -24,20 +54,12 @@ int main(){
 }
 
 
-std::string giveQuestion(int question){
+int getRandQuestion(){
 
     srand(time(0));
-    int question = rand() % 5 + 1;
+    int randQuestion = rand() % 5;
 
-    switch(){
-        case 1: std::cout << "What is the center of a cell called?";
-        case 2: std::cout << "What is the capital of Israel?";
-        case 3: std::cout << "How many feet are in a mile?";
-        case 4: std::cout << "Who was the 8th President of the United States of America?";
-        case 5: std::cout << "What is the closes Galaxy to the Milky Way";
-
-
+    return randQuestion;
 
     }
 
-}
