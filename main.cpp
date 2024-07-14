@@ -1,9 +1,10 @@
 #include <iostream>
 #include <ctime>
+#include <string>
 
 int getRandQuestion();
 
-int main(){
+int main() {
 
     /*
     case 1: std::cout << "What is the center of a cell called?\n";
@@ -54,7 +55,7 @@ int main(){
 }
 
 
-int getRandQuestion(){
+int getRandQuestion() {
 
     srand(time(0));
     int randQuestion = rand() % 5;
